@@ -51,8 +51,8 @@ export default function Home() {
         <div className="font-normal text-gray-600 text-base w-8/12 text-center  font-sans  leading-snug tracking-normal">
           {copy.subHeading}
         </div>
-        <div>
-          <div className="flex flex-row gap-8 ">
+        <div className="flex flex-col items-center justify-center">
+          <div className="flex flex-row items-center justify-center mx-auto gap-8 ">
             <Button />
           </div>
           <p className="text-gray-600 font-normal texts-sm pt-4 font-sans">
