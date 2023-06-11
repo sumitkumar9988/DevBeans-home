@@ -12,11 +12,11 @@ function Headers() {
           </Link>
         </div>
         <div className="flex items-center gap-4 lg:gap-8 flex-row">
-          <Link href={"/about"}>
+          {/* <Link href={"/about"}>
             <p className="tex-sm lg:text-normal font-normal lg:font-semibold text-black hover:text-gray-800 hover:underline duration-75  leading-normal tracking-normal font-sans cursor-pointer  ">
               About
             </p>
-          </Link>
+          </Link> */}
 
           <a
             href="https://www.figma.com/community/plugin/1197376201235364148/Figma-to-HTML%2FCSS-Code"

@@ -1,10 +1,9 @@
 "use client";
 /* eslint-disable react/jsx-key */
 import demo from "./../data/demo.json";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Lottie from "lottie-react";
 import Header from "../components/headers";
-import Button from "../components/button";
 const copy = {
   heading: "Simple & Fast Figma to React Component",
   subHeading:
@@ -42,14 +41,39 @@ const copy = {
 };
 
 export default function Home() {
+  const [animationClass, setAnimationClass] = useState("");
+  const [randomPath, setRandomPath] = useState("");
+
+  useEffect(() => {
+    const paths = [
+      "translateX(100px) translateY(-100px)", // Example random paths
+      "translateX(-50px) translateY(50px)",
+      "translateX(200px) translateY(-150px)"
+    ];
+
+    const randomIndex = Math.floor(Math.random() * paths.length);
+    const path = paths[randomIndex];
+
+    setRandomPath(path);
+
+    const timeout = setTimeout(() => {
+      setAnimationClass("animate");
+    }, 1000); // Delay before starting the animation
+
+    return () => clearTimeout(timeout);
+  }, []);
   return (
     <>
       <main className="px-6 md:px-20 lg:px-32 py-6 lg:py-8 overflow-x-hidden ">
         {/* NavBar */}
         <Header />
         <div
-          className="bg-[conic-gradient(at_top_left,_var(--tw-gradient-stops))] from-blue-100 via-blue-300 to-blue-500 w-[100px] lg:w-[600px] h-[200px] opacity-40 blur-2xl  top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2  
-         mx-auto absolute"
+          className={`bg-[conic-gradient(at_top_left,_var(--tw-gradient-stops))] from-blue-100 via-blue-300 to-blue-500 w-[100px] lg:w-[600px] h-[200px] opacity-40 blur-2xl top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mx-auto absolute ${animationClass}`}
+          style={{ transform: randomPath }}
+        ></div>
+        <div
+          className={`bg-[conic-gradient(at_top_left,_var(--tw-gradient-stops))] from-blue-100 via-blue-300 to-blue-500 w-[100px] lg:w-[600px] h-[200px] opacity-40 blur-2xl top-[800px] left-0 transform  absolute ${animationClass}`}
+          style={{ transform: randomPath }}
         ></div>
         {/* Header */}
         <header className="flex flex-col pt-36 gap-6 lg:gap-8   w-full md:10/12 lg:w-8/12 ">
@@ -58,7 +82,7 @@ export default function Home() {
               Love Frontend ?
             </span>
             <br />
-            <span className="text-gray-900">We make it easier </span>
+            <span className="text-gray-900">We Make it Easier </span>
           </div>
           <div className="font-sm lg:font-normal text-gray-600 text-base  font-sans  w-full lg:w-8/12 tracking-wide leading-relaxed">
             {copy.subHeading}
@@ -132,11 +156,14 @@ export default function Home() {
                 <p className="text-base text-gray-600 font-medium font-sans ">
                   © 2023 DevBeans.
                 </p>
-                <p className="text-base text-gray-600 font-medium font-sans ">
-                  <span>Made by</span> <span className="text-black">Sumit</span>
-                </p>
+                <a href="https://twitter.com/Sumit_r9988">
+                  <p className="text-base text-gray-600 font-medium font-sans ">
+                    <span>Made by</span>{" "}
+                    <span className="text-black">Sumit</span>
+                  </p>
+                </a>
               </div>
-              <div>
+              <a href="https://twitter.com/DevBeansHQ">
                 <div className="p-2 bg-gray-200 rounded-lg cursor-pointer">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -150,7 +177,7 @@ export default function Home() {
                     <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />{" "}
                   </svg>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
         </div>
