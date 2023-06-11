@@ -1,5 +1,8 @@
+"use client";
 /* eslint-disable react/jsx-key */
-/* eslint-disable react/no-unescaped-entities */
+import demo from "./../data/demo.json";
+import { useEffect } from "react";
+import Lottie from "lottie-react";
 import Header from "../components/headers";
 import Button from "../components/button";
 const copy = {
@@ -40,124 +43,120 @@ const copy = {
 
 export default function Home() {
   return (
-    <main className="px-4 md:px-12 lg:px-20 py-6 lg:py-8 bg-white opacity-90">
-      {/* NavBar */}
-      <Header />
-      {/* Header */}
-      <header className="flex flex-col pt-32 gap-8 mx-auto items-center justify-center">
-        <div className="font-black text-3xl md:text-5xl lg:text-7xl w-8/12 text-center  font-sans  leading-snug tracking-normal lg:leading-snug lg:tracking-normal">
-          {copy.heading}
-        </div>
-        <div className="font-normal text-gray-600 text-base w-8/12 text-center  font-sans  leading-snug tracking-normal">
-          {copy.subHeading}
-        </div>
-        <div className="flex flex-col items-center justify-center">
-          <div className="flex flex-row items-center justify-center mx-auto gap-8 ">
-            <Button />
+    <>
+      <main className="px-6 md:px-20 lg:px-32 py-6 lg:py-8 overflow-x-hidden ">
+        {/* NavBar */}
+        <Header />
+        <div
+          className="bg-[conic-gradient(at_top_left,_var(--tw-gradient-stops))] from-blue-100 via-blue-300 to-blue-500 w-[100px] lg:w-[600px] h-[200px] opacity-40 blur-2xl  top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2  
+         mx-auto absolute"
+        ></div>
+        {/* Header */}
+        <header className="flex flex-col pt-36 gap-6 lg:gap-8   w-full md:10/12 lg:w-8/12 ">
+          <div className="block font-extrabold text-3xl md:text-4xl lg:text-7xl    font-sans  leading-snug tracking-normal lg:leading-snug lg:tracking-normal text-start">
+            <span className=" text-transparent bg-clip-text bg-gradient-to-r from-gray-400 to-blue-200">
+              Love Frontend ?
+            </span>
+            <br />
+            <span className="text-gray-900">We make it easier </span>
           </div>
-          <p className="text-gray-600 font-normal texts-sm pt-4 font-sans">
-            <span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="#FFD700"
-                stroke="#FFD700"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                className="w-8 h-8 inline-block stroke-[]"
+          <div className="font-sm lg:font-normal text-gray-600 text-base  font-sans  w-full lg:w-8/12 tracking-wide leading-relaxed">
+            {copy.subHeading}
+          </div>
+          <div className="flex flex-col items-start justify-center">
+            <div className="flex flex-row items-start justify-center  gap-8 ">
+              <a
+                href="https://www.figma.com/community/plugin/1197376201235364148/Figma-to-HTML%2FCSS-Code"
+                className="relative inline-flex items-center justify-center hover:bg-gray-700 bg-black transition ease-in-out delay-150 duration-200  font-sans px-4 lg:px-12 py-2 lg:py-3 overflow-hidden font-semibold   rounded-full  group  cursor-pointer"
               >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z"
-                />
-              </svg>
-            </span>{" "}
-            <span className="inline-block">{copy.button.usage}</span>
-          </p>
-        </div>
-      </header>
-      {/* About */}
-
-      <section className="text-gray-600 body-font pt-40">
-        <div className="container px-5 py-24 mx-auto">
-          <div className="text-center mb-20">
-            <h1 className="sm:text-3xl text-2xl font-bold title-font text-gray-900 mb-4 font-sans">
-              {copy.features.heading}
-            </h1>
-
-            <div className="flex mt-6 justify-center"></div>
+                <span className="relative text-sm text-white font-semibold font-sans">
+                  Download
+                </span>
+              </a>
+            </div>
+            <p className="text-gray-600 font-normal texts-sm pt-4 font-sans">
+              <span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#FFD700"
+                  stroke="#FFD700"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  className="w-8 h-8 inline-block stroke-[]"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z"
+                  />
+                </svg>
+              </span>{" "}
+              <span className="inline-block">{copy.button.usage}</span>
+            </p>
           </div>
-          <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6">
-            {copy.features.keyFeatures.map((data) => {
-              return (
-                <div className="p-4 md:w-1/3 flex flex-col text-center items-center">
-                  <div className="flex-grow">
-                    <h2 className="text-gray-900 text-lg title-font font-bold mb-3 font-sans text-left">
-                      {data.heading}
-                    </h2>
-                    <p className="leading-relaxed text-base font-sans text-left">
-                      {data.description}
-                    </p>
-                  </div>
+        </header>
+        <div className="flex flex-col w-full justify-center items-center py-12 lg:pt-32 lg:pb-20 h-[400px] lg:h-[800px]">
+          <Lottie
+            animationData={demo}
+            className="flex justify-center items-center"
+            loop={true}
+          />
+        </div>
+
+        {/* About */}
+
+        <div className=" lg:pt-48 pt-12 pb-20 lg:pb-28">
+          <div className="flex flex-col gap-6 lg:gap-12 items-start justify-start">
+            <input
+              className="text-2xl lg:text-5xl font-normal font-sans placeholder-gray-200 focus:outline-none"
+              placeholder="Enter Email"
+              type="email"
+            ></input>
+            <div className="flex flex-row items-start justify-center  gap-8 ">
+              <a
+                href="https://www.figma.com/community/plugin/1197376201235364148/Figma-to-HTML%2FCSS-Code"
+                className="relative inline-flex items-center justify-center hover:bg-gray-700 bg-black transition ease-in-out delay-150 duration-200  font-sans px-4 lg:px-12 py-2 lg:py-3 overflow-hidden font-semibold   rounded-full  group  cursor-pointer"
+              >
+                <span className="relative text-white text-sm  font-semibold font-sans">
+                  Join our Newsletter
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div className="lg:pt-48 pt-40 ">
+          <div className=" border-[.3px] "></div>
+          <div className="py-4 pt-8">
+            <div className="flex justify-between w-full flex-row">
+              <div className="flex flex-col gap-2 ">
+                <p className="text-base text-gray-600 font-medium font-sans ">
+                  © 2023 DevBeans.
+                </p>
+                <p className="text-base text-gray-600 font-medium font-sans ">
+                  <span>Made by</span> <span className="text-black">Sumit</span>
+                </p>
+              </div>
+              <div>
+                <div className="p-2 bg-gray-200 rounded-lg cursor-pointer">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    className="bi bi-twitter"
+                    viewBox="0 0 16 16"
+                  >
+                    {" "}
+                    <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />{" "}
+                  </svg>
                 </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Features */}
-
-      {/* About */}
-
-      <section className="text-gray-600 body-font">
-        <div className="container px-5 py-40 mx-auto">
-          <div className="xl:w-1/2 lg:w-3/4 w-full mx-auto text-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor"
-              className="inline-block w-8 h-8 text-gray-400 mb-8"
-              viewBox="0 0 975.036 975.036"
-            >
-              <path d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z"></path>
-            </svg>
-            <p className="leading-relaxed text-lg font-sans">
-              I am buiding this product for frontend developer, you must know
-              that generating code from the design is a long and tiresome work.
-              DevBeans will offer a tool to convert the figma design into
-              react+tailwind code easily. This tool can save tons of hours for
-              frontend developers!
-            </p>
-            <span className="inline-block h-1 w-10 rounded bg-yellow-500 mt-8 mb-6"></span>
-            <h2 className="text-gray-900 font-medium title-font tracking-wider text-sm font-sans">
-              --Sumit Kumar
-            </h2>
-            <p className="text-gray-500 font-sans">Founder, DevBeans</p>
-          </div>
-        </div>
-      </section>
-
-      <div className="bg-white py-20">
-        <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
-          <div className="mx-auto flex max-w-xl flex-col items-center text-center">
-            <p className="mb-4 font-semibold text-yellow-500 md:mb-6 md:text-base xl:text-xl font-sans">
-              {copy.cta.badge}
-            </p>
-
-            <h1 className="text-black-800 mb-8 text-2xl lg:text-3xl font-bold sm:text-4xl md:mb-12 md:text-5xl font-sans">
-              {copy.cta.title}
-            </h1>
-
-            <div className="flex w-full flex-col gap-2.5 sm:flex-row items-center sm:justify-center">
-              <div className="flex flex-row gap-8 items-center justify-center">
-                <Button />
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      {/*  */}
-    </main>
+        {/*  */}
+      </main>
+    </>
   );
 }

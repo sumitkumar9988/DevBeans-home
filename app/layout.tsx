@@ -1,4 +1,5 @@
 import "./globals.css";
+import Script from "next/script";
 import { Plus_Jakarta_Sans, Inter, Roboto_Mono } from "next/font/google";
 
 const plus = Plus_Jakarta_Sans({
